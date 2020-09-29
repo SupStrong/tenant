@@ -7,13 +7,13 @@
  */
 export default {
   dev: {
-    '/api/': {
-      target: 'https://preview.pro.ant.design',
+    '/api': {
+      target: 'http://localhost:3333/',
       changeOrigin: true,
-      pathRewrite: { '^': '' },
+      pathRewrite: { '^/api': '' },
     },
   },
-  test: {
+  prod: {
     '/api/': {
       target: 'https://preview.pro.ant.design',
       changeOrigin: true,
