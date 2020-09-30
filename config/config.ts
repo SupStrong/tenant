@@ -103,10 +103,3 @@ export default defineConfig({
   },
 });
 
-// CREATE TABLE `tenant_user` (
-//   `Id` int(11) NOT NULL AUTO_INCREMENT,
-//   `username` varchar(18) NOT NULL unique,
-//   `password` varchar(18) NOT NULL,
-//   `power` varchar(18) NOT NULL,
-//   PRIMARY KEY (`Id`)
-//   ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=gbk;

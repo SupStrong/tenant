@@ -42,7 +42,7 @@ const replaceGoto = () => {
       window.location.href = '/';
       return;
     }
-  }
+  }  
   window.location.href = urlParams.href.split(urlParams.pathname)[0] + (redirect || '/');
 };
 
@@ -59,7 +59,7 @@ const Login: React.FC<{}> = () => {
     try {
       // 登录
       const msg = await fakeAccountLogin({ ...values, type });
-      if (msg.status === 'ok') {
+      if (msg.status === 1) {
         message.success('登录成功！');
         replaceGoto();
         setTimeout(() => {
@@ -96,7 +96,7 @@ const Login: React.FC<{}> = () => {
         <div className={styles.main}>
           <LoginFrom activeKey={type} onTabChange={setType} onSubmit={handleSubmit}>
             <Tab key="account" tab="账户密码登录">
-              {status === 'error' && loginType === 'account' && !submitting && (
+              {status === 0 && loginType === 'account' && !submitting && (
                 <LoginMessage content="账户或密码错误（admin/ant.design）" />
               )}
 
@@ -122,7 +122,7 @@ const Login: React.FC<{}> = () => {
               />
             </Tab>
             <Tab key="mobile" tab="手机号登录">
-              {status === 'error' && loginType === 'mobile' && !submitting && (
+              {status === 0 && loginType === 'mobile' && !submitting && (
                 <LoginMessage content="验证码错误" />
               )}
               <Mobile

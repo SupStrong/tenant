@@ -16,6 +16,8 @@ export async function getInitialState(): Promise<{
   if (history.location.pathname !== '/user/login') {
     try {
       const currentUser = await queryCurrent();
+      console.log(currentUser,"currentUser");
+      
       return {
         currentUser,
         settings: defaultSettings,
